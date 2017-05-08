@@ -9,7 +9,7 @@
 import UIKit
 
 class HeaderSectionCollectionReusableView: UICollectionReusableView {
-    @IBOutlet var HeaderText: UITextField!
-    @IBOutlet var numberEvent: UITextField!
+    @IBOutlet var HeaderText: UILabel!
+    @IBOutlet var NumberText: UILabel!
     
 }

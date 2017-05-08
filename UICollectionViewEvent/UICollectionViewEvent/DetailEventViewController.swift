@@ -11,6 +11,7 @@ import UIKit
 class DetailEventViewController: UIViewController {
 
      var event : Event?
+    var day: String?
     
     @IBOutlet var titleText: UITextField!
     @IBOutlet var dayText: UITextField!
@@ -20,9 +21,9 @@ class DetailEventViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        titleText.text = event?.eventName
-        dayText.text = event?.eventDay
-        contentText.text = event?.eventContent
+        titleText.text = event?.getEventName()
+        dayText.text = day
+        contentText.text = event?.getEventContent()
     }
 
     override func didReceiveMemoryWarning() {

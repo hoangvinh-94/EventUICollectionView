@@ -8,22 +8,19 @@
 
 import UIKit
 
-class AddEventViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class AddEventViewController: UIViewController, UIPickerViewDelegate {
 
-    var DayOfWeek1 = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
     
     @IBOutlet var titleEvent: UITextField!
     @IBOutlet var dayEvent: UILabel!
-    
     @IBOutlet var contentEvent: UITextView!
-    @IBOutlet var dayOfWeekText: UITextField!
-    @IBOutlet var dropDown: UIPickerView!
     @IBOutlet var saveEvent: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        dayEvent.text = Date().dayOfWeek()
         
     }
 
@@ -33,46 +30,31 @@ class AddEventViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if(segue.identifier == "ListEvent"){
-            let vc = segue.destination as! ViewController
-            vc.newEvent?.eventName = titleEvent.text!
-            vc.newEvent?.eventContent = contentEvent.text
-            vc.newEvent?.eventDay = dayEvent.text!
-            vc.dayString = dayOfWeekText.text
+    // Add New Event
+    @IBAction func addEvent(_ sender: Any) {
+        if(titleEvent.text!.isEmpty || contentEvent.text!.isEmpty){
+            // add alert
+            let alert = UIAlertController(title: "Notify", message: "Fill all information Please! ", preferredStyle: UIAlertControllerStyle.alert)
+            // add action for alert created
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            // show alert
+              self.present(alert, animated: true, completion: nil);
+        }
+        else{
+            Event.isLoadData = true
+            let event: Event = Event(name: titleEvent.text!, content: contentEvent.text!)
+            Event.Day = Date().dayOfWeek()
+            Event.event = event
+            navigationController?.popViewController(animated: true)
+            
         }
     }
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return DayOfWeek1.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        self.view.endEditing(true)
-        return DayOfWeek1[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.dayOfWeekText.text = DayOfWeek1[row]
-        self.dropDown.isHidden = true
-        self.titleEvent.isHidden = false
-        self.dayEvent.isHidden = false
-        self.contentEvent.isHidden = false
-        self.saveEvent.isHidden = false
-    }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if(textField == self.dayOfWeekText){
-            self.dropDown.isHidden = false
 
-        }
+}
+extension Date {
+    func dayOfWeek() -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self).capitalized
     }
 }

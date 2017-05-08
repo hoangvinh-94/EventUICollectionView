@@ -10,8 +10,5 @@ import UIKit
 
 class EventCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet var TitleEvent: UITextField!
-    
-    @IBOutlet var dayEvent: UITextField!
-    
+    @IBOutlet var TitleEvent: UILabel!
 }
