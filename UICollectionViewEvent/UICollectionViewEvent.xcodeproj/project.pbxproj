@@ -16,10 +16,10 @@
 		60DF978E1EBDEC5900CF86EC /* UICollectionViewEventUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF978D1EBDEC5900CF86EC /* UICollectionViewEventUITests.swift */; };
 		60DF979C1EBDED3500CF86EC /* HeaderSectionCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF979B1EBDED3500CF86EC /* HeaderSectionCollectionReusableView.swift */; };
 		60DF979E1EBDED7700CF86EC /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF979D1EBDED7700CF86EC /* EventCollectionViewCell.swift */; };
-		60DF97A01EBDEFC700CF86EC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF979F1EBDEFC700CF86EC /* Event.swift */; };
-		60DF97A21EBDEFD200CF86EC /* DayOfWeekEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF97A11EBDEFD200CF86EC /* DayOfWeekEvent.swift */; };
 		60DF97A41EBE020500CF86EC /* DetailEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF97A31EBE020500CF86EC /* DetailEventViewController.swift */; };
 		60DF97A61EBE23C500CF86EC /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DF97A51EBE23C500CF86EC /* AddEventViewController.swift */; };
+		F77BC1151ECC39000015D48B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BC1141ECC39000015D48B /* Event.swift */; };
+		F77BC1171ECC394C0015D48B /* DayOfWeekEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77BC1161ECC394C0015D48B /* DayOfWeekEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		60DF978F1EBDEC5900CF86EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60DF979B1EBDED3500CF86EC /* HeaderSectionCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderSectionCollectionReusableView.swift; sourceTree = "<group>"; };
 		60DF979D1EBDED7700CF86EC /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
-		60DF979F1EBDEFC700CF86EC /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = ../../ManagementEven/Event.swift; sourceTree = "<group>"; };
-		60DF97A11EBDEFD200CF86EC /* DayOfWeekEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayOfWeekEvent.swift; path = ../../ManagementEven/ManagementEven/DayOfWeekEvent.swift; sourceTree = "<group>"; };
 		60DF97A31EBE020500CF86EC /* DetailEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailEventViewController.swift; sourceTree = "<group>"; };
 		60DF97A51EBE23C500CF86EC /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		F77BC1141ECC39000015D48B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F77BC1161ECC394C0015D48B /* DayOfWeekEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOfWeekEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,6 @@
 		60DF976C1EBDEC5800CF86EC /* UICollectionViewEvent */ = {
 			isa = PBXGroup;
 			children = (
-				60DF97A11EBDEFD200CF86EC /* DayOfWeekEvent.swift */,
-				60DF979F1EBDEFC700CF86EC /* Event.swift */,
 				60DF976D1EBDEC5800CF86EC /* AppDelegate.swift */,
 				60DF976F1EBDEC5800CF86EC /* ViewController.swift */,
 				60DF97A51EBE23C500CF86EC /* AddEventViewController.swift */,
@@ -121,6 +119,8 @@
 				60DF97741EBDEC5800CF86EC /* Assets.xcassets */,
 				60DF97761EBDEC5800CF86EC /* LaunchScreen.storyboard */,
 				60DF97791EBDEC5800CF86EC /* Info.plist */,
+				F77BC1141ECC39000015D48B /* Event.swift */,
+				F77BC1161ECC394C0015D48B /* DayOfWeekEvent.swift */,
 			);
 			path = UICollectionViewEvent;
 			sourceTree = "<group>";
@@ -277,14 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60DF97A21EBDEFD200CF86EC /* DayOfWeekEvent.swift in Sources */,
+				F77BC1171ECC394C0015D48B /* DayOfWeekEvent.swift in Sources */,
+				F77BC1151ECC39000015D48B /* Event.swift in Sources */,
 				60DF97A61EBE23C500CF86EC /* AddEventViewController.swift in Sources */,
 				60DF97701EBDEC5800CF86EC /* ViewController.swift in Sources */,
 				60DF979E1EBDED7700CF86EC /* EventCollectionViewCell.swift in Sources */,
 				60DF97A41EBE020500CF86EC /* DetailEventViewController.swift in Sources */,
 				60DF976E1EBDEC5800CF86EC /* AppDelegate.swift in Sources */,
 				60DF979C1EBDED3500CF86EC /* HeaderSectionCollectionReusableView.swift in Sources */,
-				60DF97A01EBDEFC700CF86EC /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +529,7 @@
 				60DF97941EBDEC5900CF86EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60DF97951EBDEC5900CF86EC /* Build configuration list for PBXNativeTarget "UICollectionViewEventTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +538,7 @@
 				60DF97971EBDEC5900CF86EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60DF97981EBDEC5900CF86EC /* Build configuration list for PBXNativeTarget "UICollectionViewEventUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +547,7 @@
 				60DF979A1EBDEC5900CF86EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

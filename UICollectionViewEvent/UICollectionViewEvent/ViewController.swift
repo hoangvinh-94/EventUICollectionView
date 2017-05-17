@@ -33,8 +33,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewWillAppear(_ animated: Bool) {
         if(Event.isLoadData){
-            let event: Event = Event.event
-            let day: String = Event.Day
+            let event: Event = Event.event!
+            let day: String = Event.Day!
                    switch day {
         case "Monday":
             DayOfWeek[0].eventsInDay.append(event)
